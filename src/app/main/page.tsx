@@ -1,28 +1,39 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Header from '../auth/dashboard/me/components/Header'
 
-function Page() {
-  const [count, setCount] = useState(0)
-  useEffect(() =>{
-    async function getMessage() {
-      const res = await fetch('/api/hello?name=User')
-      const data = await res.json()
-      console.log(data.message)
-    }
-    getMessage()
-  },[])
+export default function Page() {
+  const [taskList, setTaskList] = useState<{title: string, about: string}[]>([])
   useEffect(() => {
-    console.log(`conut now: ${count}`)
-  }, [count])
+    async function getTasks() {
+      const res = await fetch('/api/todo', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      const data = await res.json()
+      setTaskList(data.tasks)
+    }
+    getTasks()
+  }, [])
   return (
-    <div>
-      <Header></Header>
-      <button onClick={() => {setCount(count-1)}}>-1</button>
-      <div className=""><span>{count}</span></div>
-      <button onClick={() => {setCount(count+1)}}>+1</button>
+    <>
+    <div className="">
+      <ul>
+        {taskList ? (<>
+                {taskList?.map((el, key) => {
+          return (
+            <li key={key}>
+              <h1>{el.title}</h1>
+              <h1>{el.about}</h1>
+            </li>
+          )
+        })}
+        </>) : (<>
+        NO
+        </>)}
+      </ul>
     </div>
-  )
+    </>
+  );
 }
-
-export default Page
