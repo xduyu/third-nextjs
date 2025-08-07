@@ -60,7 +60,6 @@ npm run dev
 
 * Tasks are stored in server memory (no database) — list resets on server restart
 * Frontend uses TypeScript, backend API uses JavaScript
-* Easy to extend with more features (delete/edit tasks, auth, etc.)
 
 ---
 
