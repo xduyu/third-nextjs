@@ -23,7 +23,6 @@ cd third-nextjs
 npm install
 ```
 
-
 3. Run the development server:
 
 ```bash
