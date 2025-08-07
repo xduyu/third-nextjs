@@ -20,8 +20,8 @@ Allows you to add and display tasks with a title and description.
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/xduyu/first-nextjs.git
+cd first-nextjs
 ```
 
 2. Install dependencies:
@@ -42,10 +42,9 @@ npm run dev
 
 ## Project Structure
 
-* `/app/page.tsx` — main page with task form and list
+* `/src/app/main/page.tsx` — main page with task form and list
+* `/app/create/todo/page.tsx` — main page for create new task
 * `/pages/api/todo.js` — API route handling GET and POST for tasks
-* `/components/` — (optional) React components
-* `/styles/` — styles (if any)
 
 ---
 
