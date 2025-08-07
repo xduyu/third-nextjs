@@ -1,26 +1,21 @@
-# Next.js Users List
+````markdown
+# Next.js User Details App
 
-This is a simple Next.js project demonstrating how to fetch and display a list of users from an API endpoint.
-
----
+A simple Next.js project demonstrating how to create dynamic user detail pages with TypeScript and API routes.
 
 ## Features
 
-* Fetch users from `/api/users` endpoint
-* Display user names in a list
-* Uses React hooks (`useState`, `useEffect`) with TypeScript typings
-* Basic styling with Tailwind CSS (optional)
+- Fetches user data from API routes dynamically based on URL parameter
+- Uses React hooks and TypeScript for state management and typing
+- Demonstrates Next.js dynamic routing and client-side data fetching
 
----
-
-## Installation
+## Getting Started
 
 1. Clone the repository:
-
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-```
+git clone https://github.com/xduyu/third-nextjs.git
+cd third-nextjs
+````
 
 2. Install dependencies:
 
@@ -36,32 +31,12 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
-
 ## API
 
-* `/api/users` — returns JSON with a list of users in the format:
-
-```json
-{
-  "users": [
-    { "name": "John" },
-    { "name": "Jane" }
-  ]
-}
-```
-
----
-
-## Usage
-
-* The main page fetches the users list on load and displays each user's name.
-* Modify or extend the API or frontend as needed.
-
----
+The API endpoint `/api/users/[username]` returns user data by username in JSON format.
 
 ## License
 
 MIT
 
----
+```
